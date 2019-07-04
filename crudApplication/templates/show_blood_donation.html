@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Bag</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Donor Id</th>
+        <th>Blood Donation Before </th>
+        <th>Gap of Blood Donation</th>
+        <th>Is Recipient Relative</th>
+        <th>Patient Name</th>
+
+    </tr>
+    </thead>
+    <tbody>
+   {% for items in bags %}
+    <tr>
+        <td>{{items.reg_no}}</td>
+        <td>{{items.blood_donate_before_boolean }}</td>
+        <td>{{items.gap_of_blood_donation}}</td>
+        <td>{{items.is_recipient_relative}}</td>
+        <td>{{items.patient_name}}</td>
+
+
+        <td>
+       <!--     <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil">Edit</span> </a>
+            <a href="/delete/{{ employee.id }}">Delete</a>-->
+        </td>
+    </tr>
+  {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

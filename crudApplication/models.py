@@ -109,3 +109,14 @@ class PhysicalTest(models.Model):
     class Meta:
         db_table = "physical_test"
 
+
+class BloodDonationHistory(models.Model):
+
+    reg_no = models.OneToOneField(Donor, on_delete=models.CASCADE, primary_key=True)
+    blood_donate_before_boolean = models.BooleanField()
+    gap_of_blood_donation = models.CharField(max_length=20)
+    is_recipient_relative = models.BooleanField()
+    patient_name = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = "blood_Donation_History"

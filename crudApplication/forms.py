@@ -1,5 +1,5 @@
 from django import forms
-from crudApplication.models import Consent, Recipient, Charge, BloodTest, Storage, Donor, DonorInformation, PhysicalTest
+from crudApplication.models import Consent, Recipient, Charge, BloodTest, Storage, Donor, DonorInformation, PhysicalTest, BloodDonationHistory
 
 
 class ConsentForm(forms.ModelForm):
@@ -50,3 +50,7 @@ class PhysicalTestForm(forms.ModelForm):
         fields = "__all__"
 
 
+class BloodDonationHistoryForm(forms.ModelForm):
+    class Meta:
+        model = BloodDonationHistory
+        fields = "__all__"
