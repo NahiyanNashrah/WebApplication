@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from crudApplication.forms import ConsentForm, RecipientForm, ChargeForm, BloodTestForm, StorageForm, DonorForm, DonorInformationForm, PhysicalTestForm, BloodDonationHistoryForm
-from crudApplication.models import Consent, Recipient, Charge, BloodTest, Storage, Donor, DonorInformation, PhysicalTest, BloodDonationHistory
+from crudApplication.forms import ConsentForm, RecipientForm, ChargeForm, BloodTestForm, StorageForm, DonorForm, DonorInformationForm, PhysicalTestForm, BloodDonationHistoryForm, MedicalHistoryForm
+from crudApplication.models import Consent, Recipient, Charge, BloodTest, Storage, Donor, DonorInformation, PhysicalTest, BloodDonationHistory, MedicalHistory
 
 
 def consent_method(request):
@@ -172,3 +172,22 @@ def blood_donation_method(request):
 def blood_donation_info(request):
     bags = BloodDonationHistory.objects.all()
     return render(request, "show_blood_donation.html", {'bags': bags})
+
+
+def medical_history_method(request):
+    if request.method == "POST":
+        form = MedicalHistoryForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('/medical_history_show')
+            except:
+                pass
+    else:
+        form = MedicalHistoryForm()
+    return render(request, "medical_history.html", {'form': form})
+
+
+def medical_history_show(request):
+    bags = MedicalHistory.objects.all()
+    return render(request, "show_medical_history.html", {'bags': bags})

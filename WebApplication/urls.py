@@ -42,5 +42,7 @@ urlpatterns = [
     path('show_test/', views.show_test),
     path('blood_donation_method/', views.blood_donation_method),
     path('blood_donation_info/', views.blood_donation_info),
+    path('medical_history_method/', views.medical_history_method),
+    path('medical_history_show/', views.medical_history_show),
 
 ]

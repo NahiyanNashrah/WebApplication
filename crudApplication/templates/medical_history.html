@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical History</title>
+
+</head>
+<body>
+<form method="POST" class="post-form" action="/medical_history_method/">
+    {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Donor Id:</label>
+        <div class="col-sm-4">
+        {{ form.reg_no }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Disease_before_how_longdays :</label>
+        <div class="col-sm-4">
+        {{ form.disease_before_how_longdays }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lever_disease:</label>
+        <div class="col-sm-4">
+        {{ form.lever_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Asphyxia:</label>
+        <div class="col-sm-4">
+        {{ form.Asphyxia }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Cough:</label>
+        <div class="col-sm-4">
+        {{ form.cough }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Heart_disease:</label>
+        <div class="col-sm-4">
+        {{ form.heart_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Malaria:</label>
+        <div class="col-sm-4">
+        {{ form.malaria }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Kalaajor:</label>
+        <div class="col-sm-4">
+        {{ form.kalaazar }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Typhoid:</label>
+        <div class="col-sm-4">
+        {{ form.typhoid }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Operation_in_three_month:</label>
+        <div class="col-sm-4">
+        {{ form.operation_in_three_month }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Any_treatment_medicine_now:</label>
+        <div class="col-sm-4">
+        {{ form.any_treatment_medicine_now }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Gastric:</label>
+        <div class="col-sm-4">
+        {{ form.gestric }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> MHaematemeses :</label>
+        <div class="col-sm-4">
+        {{ form.Haematemeses }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Blood_loo:</label>
+        <div class="col-sm-4">
+        {{ form.blood_loo }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Rheumatic_fever:</label>
+        <div class="col-sm-4">
+        {{ form.rheumatic_fever }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Diabetes:</label>
+        <div class="col-sm-4">
+        {{ form.diabetes }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Epilepsy:</label>
+        <div class="col-sm-4">
+        {{ form.epilepsy }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">kidney_disease:</label>
+        <div class="col-sm-4">
+        {{ form.kidney_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Social_disease:</label>
+        <div class="col-sm-4">
+        {{ form.social_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Skin_disease:</label>
+        <div class="col-sm-4">
+        {{ form.skin_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Is_blood_taken:</label>
+        <div class="col-sm-4">
+        {{ form.is_blood_taken }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Is_vaccine_taken:</label>
+        <div class="col-sm-4">
+        {{ form.is_vaccine_taken }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+       <button type="submit" class = "btn btn-primary">Submit</button>
+        </div>
+    </div>
+    </div>
+</form>
+</body>
+</body>
+</html>

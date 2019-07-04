@@ -120,3 +120,31 @@ class BloodDonationHistory(models.Model):
 
     class Meta:
         db_table = "blood_Donation_History"
+
+
+class MedicalHistory(models.Model):
+    reg_no = models.OneToOneField(Donor, on_delete=models.CASCADE, primary_key=True)
+    disease_before_how_longdays = models.IntegerField(max_length=8)
+    lever_disease = models.BooleanField()
+    Asphyxia = models.BooleanField()
+    cough = models.BooleanField()
+    heart_disease = models.BooleanField()
+    malaria = models.BooleanField()
+    kalaazar = models.BooleanField()
+    typhoid = models.BooleanField()
+    operation_in_three_month = models.BooleanField()
+    any_treatment_medicine_now = models.BooleanField()
+    gestric = models.BooleanField()
+    Haematemeses = models.BooleanField()
+    blood_loo = models.BooleanField()
+    rheumatic_fever = models.BooleanField()
+    diabetes = models.BooleanField()
+    epilepsy = models.BooleanField()
+    kidney_disease = models.BooleanField()
+    social_disease = models.BooleanField()
+    skin_disease = models.BooleanField()
+    is_blood_taken = models.BooleanField()
+    is_vaccine_taken = models.BooleanField()
+
+    class Meta:
+        db_table = "medical_history"

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Medical History Details</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Donor Id</th>
+        <th>Disease_before_how_longdays</th>
+        <th>Lever_disease</th>
+        <th>Asphyxia</th>
+        <th>Cough</th>
+        <th>Heart_disease</th>
+        <th>Malaria</th>
+        <th>kalaajor</th>
+        <th>Typhoid</th>
+        <th>Operation_in_three_month</th>
+        <th>Any_treatment_medicine_now</th>
+        <th>Gastric </th>
+        <th>Haematemeses</th>
+        <th>Blood_loo</th>
+        <th>Rheumatic_fever</th>
+        <th>Diabetes</th>
+        <th>Epilepsy</th>
+        <th>Kidney_disease</th>
+        <th>Social_disease</th>
+        <th>Skin_disease</th>
+        <th>Is_blood_taken</th>
+        <th>Is_vaccine_taken</th>
+    </tr>
+    </thead>
+    <tbody>
+   {% for items in bags %}
+    <tr>
+
+        <td>{{items.reg_no }}</td>
+        <td>{{items.disease_before_how_longdays}}</td>
+        <td>{{items.lever_disease}}</td>
+        <td>{{items.Asphyxia}}</td>
+        <td>{{items.cough}}</td>
+        <td>{{items.heart_disease }}</td>
+        <td>{{ items.malaria }}</td>
+        <td>{{ items.kalaazar }}</td>
+        <td>{{ items.typhoid }}</td>
+        <td>{{ items.operation_in_three_month }}</td>
+        <td>{{ items.any_treatment_medicine_now }}</td>
+        <td>{{ items.gestric }}</td>
+        <td>{{ items.Haematemese }}</td>
+        <td>{{ items.blood_loo }}</td>
+        <td>{{ items.rheumatic_fever }}</td>
+        <td>{{ items.diabetes }}</td>
+        <td>{{ items.epilepsy }}</td>
+        <td>{{ items.kidney_disease }}</td>
+        <td>{{ items.social_disease }}</td>
+        <td>{{ items.skin_disease }}</td>
+        <td>{{ items.is_blood_taken }}</td>
+        <td>{{ items.is_vaccine_taken }}</td>
+
+        <td>
+       <!--     <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil">Edit</span> </a>
+            <a href="/delete/{{ employee.id }}">Delete</a>-->
+        </td>
+    </tr>
+  {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
