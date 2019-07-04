@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Show Bag</title>
+    <title>Donation Information</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static '/style.css' %}"/>
 </head>
@@ -21,7 +21,7 @@
     <tbody>
    {% for items in bags %}
     <tr>
-        <td>{{items.reg_no}}</td>
+        <td>{{items.reg_no.reg_no}}</td>
         <td>{{items.blood_donate_before_boolean }}</td>
         <td>{{items.gap_of_blood_donation}}</td>
         <td>{{items.is_recipient_relative}}</td>

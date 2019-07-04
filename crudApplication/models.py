@@ -1,17 +1,6 @@
 from django.db import models
 
 
-class Consent(models.Model):
-    reg_no = models.IntegerField(primary_key=True, max_length=8)
-    permitted_to_donate = models.BooleanField()
-    donor_consent = models.CharField(max_length=20)
-    doctor_consent = models.CharField(max_length=20)
-    date = models.DateField()
-
-    class Meta:
-        db_table = "Consent"
-
-
 class Recipient(models.Model):
     serial_no = models.IntegerField(primary_key=True, max_length=8)
     patient_name = models.CharField(max_length=50)
@@ -79,6 +68,16 @@ class Donor(models.Model):
     class Meta:
         db_table = "donor"
 
+
+class Consent(models.Model):
+    reg_no = models.OneToOneField(Donor, on_delete=models.CASCADE, primary_key=True)
+    permitted_to_donate = models.BooleanField()
+    donor_consent = models.CharField(max_length=20)
+    doctor_consent = models.CharField(max_length=20)
+    date = models.DateField()
+
+    class Meta:
+        db_table = "Consent"
 
 class DonorInformation(models.Model):
     reg_no = models.OneToOneField(Donor, on_delete=models.CASCADE, primary_key=True)

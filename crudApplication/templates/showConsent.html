@@ -9,25 +9,28 @@
 <body>
 <table class="table table-striped table-bordered table-sm">
     <thead class="thead-dark">
+    <table border="1" bordercolorlight="#006fdd" bordercolordark="#b9dcff">
+
+
     <tr>
-        <th>Registration No</th>
-        <th>Permitted to Donate</th>
-        <th>Donor Consent</th>
-        <th>Doctor Consent</th>
-        <th>Date</th>
+        <th> Registration No </th>
+        <th> Permitted to Donate </th>
+        <th> Donor Consent </th>
+        <th> Doctor Consent </th>
+        <th> Date </th>
     </tr>
     </thead>
     <tbody>
    {% for item in consent %}
     <tr>
-        <td>{{item.reg_no}}</td>
+        <td>{{item.reg_no.reg_no}}</td>
          <td>{{item.permitted_to_donate}}</td>
          <td>{{item.donor_consent}}</td>
          <td>{{item.doctor_consent}}</td>
          <td>{{item.date}}</td>
         <td>
-           # <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil">Edit</span> </a>
-           # <a href="/delete/{{ employee.id }}">Delete</a>
+           <!--- <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil">Edit</span> </a>
+           # <a href="/delete/{{ employee.id }}">Delete</a>  -->
         </td>
     </tr>
   {% endfor %}
