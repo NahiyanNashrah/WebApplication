@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from crudApplication.forms import ConsentForm, RecipientForm, ChargeForm, BloodTestForm, StorageForm, DonorForm, DonorInformationForm, PhysicalTestForm
 from crudApplication.models import Consent, Recipient, Charge, BloodTest, Storage, Donor, DonorInformation, PhysicalTest
 
+
 def consent_method(request):
     if request.method == "POST":
         form = ConsentForm(request.POST)
@@ -134,3 +135,21 @@ def show_info(request):
     data = DonorInformation.objects.all()
     return render(request, "showDonorInfo.html", {'data': data})
 
+
+def test(request):
+    if request.method == "POST":
+        form = PhysicalTestForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('/show_test')
+            except:
+                pass
+    else:
+        form = PhysicalTestForm()
+    return render(request, "physicalTest.html", {'form': form})
+
+
+def show_test(request):
+    data = PhysicalTest.objects.all()
+    return render(request, "showTest.html", {'data': data})

@@ -38,4 +38,7 @@ urlpatterns = [
     path('show_donor/', views.show_donor),
     path('info/', views.info),
     path('show_info/', views.show_info),
+    path('test/', views.test),
+    path('show_test/', views.show_test),
+
 ]
