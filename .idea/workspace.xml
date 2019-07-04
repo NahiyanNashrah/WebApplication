@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67dc3f47-e86d-4010-a35f-3bf805c493c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crudApplication/templates/physicalTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/crudApplication/templates/physicalTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crudApplication/templates/showTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/crudApplication/templates/showTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crudApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crudApplication/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crudApplication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/crudApplication/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,10 +27,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebApplication/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
+            <state relative-caret-position="215">
               <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
               <folding>
                 <element signature="e#638#670#0" expanded="true" />
@@ -52,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crudApplication/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+            <state relative-caret-position="149">
+              <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -127,12 +123,12 @@
         <option value="$PROJECT_DIR$/crudApplication/templates/showDonor.html" />
         <option value="$PROJECT_DIR$/crudApplication/templates/donorInfo.html" />
         <option value="$PROJECT_DIR$/crudApplication/templates/showDonorInfo.html" />
-        <option value="$PROJECT_DIR$/crudApplication/models.py" />
         <option value="$PROJECT_DIR$/crudApplication/forms.py" />
         <option value="$PROJECT_DIR$/crudApplication/views.py" />
         <option value="$PROJECT_DIR$/crudApplication/templates/physicalTest.html" />
         <option value="$PROJECT_DIR$/crudApplication/templates/showTest.html" />
         <option value="$PROJECT_DIR$/WebApplication/urls.py" />
+        <option value="$PROJECT_DIR$/crudApplication/models.py" />
       </list>
     </option>
   </component>
@@ -251,22 +247,22 @@
       <workItem from="1562081126240" duration="13662000" />
       <workItem from="1562125346128" duration="13293000" />
       <workItem from="1562168993742" duration="4496000" />
-      <workItem from="1562215147427" duration="11980000" />
+      <workItem from="1562215147427" duration="12381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65752000" />
+    <option name="totallyTimeSpent" value="66153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="382" y="0" width="991" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23952739" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23952739" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3089701" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3089701" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="4" />
@@ -464,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crudApplication/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crudApplication/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -507,11 +496,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
+        <state relative-caret-position="215">
           <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
           <folding>
             <element signature="e#638#670#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crudApplication/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
         </state>
       </provider>
     </entry>
