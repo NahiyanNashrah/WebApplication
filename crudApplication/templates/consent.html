@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consent</title>
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/consent_method/">
+    {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Details</h3>
+        </div>
+    </div>
+     <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Registration No:</label>
+        <div class="col-sm-4">
+        {{ form.reg_no }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Permitted to Donate:</label>
+        <div class="col-sm-4">
+        {{ form.permitted_to_donate }}
+        </div>
+    </div>
+ <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Donor Consent:</label>
+        <div class="col-sm-4">
+        {{ form.donor_consent }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Doctor Consent:</label>
+        <div class="col-sm-4">
+        {{ form.doctor_consent }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Date:</label>
+        <div class="col-sm-4">
+        {{ form.date }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+       <button type="submit" class = "btn btn-primary">Submit</button>
+        </div>
+</body>
+</html>

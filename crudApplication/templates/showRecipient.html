@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Records</title>
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Recipient Id</th>
+        <th>Recipient Name</th>
+        <th>Age</th>
+        <th>Blood Group</th>
+        <th>Gender</th>
+        <th>Referred By</th>
+        <th>Ward</th>
+        <th>Unit</th>
+        <th>Cabin Bed</th>
+        <th>Issued Voucher No</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+   {% for items in recipients %}
+    <tr>
+        <td>{{items.serial_no}}</td>
+        <td>{{items.patient_name}}</td>
+        <td>{{items.age}}</td>
+        <td>{{items.blood_group}}</td>
+        <td>{{items.gender}}</td>
+        <td>{{items.referred_by}}</td>
+        <td>{{items.ward }}</td>
+        <td>{{items.unit}}</td>
+        <td>{{items.cabin_bed}}</td>
+        <td>{{items.issue_voucher_no}}</td>
+        <td>{{items.date}}</td>
+
+
+        <td>
+       <!--     <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil">Edit</span> </a>
+            <a href="/delete/{{ employee.id }}">Delete</a>-->
+        </td>
+    </tr>
+  {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/receive" class="btn btn-primary">Add New Record</a> </center>
+</body>
+</html>

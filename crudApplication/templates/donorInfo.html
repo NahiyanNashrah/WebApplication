@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donor Information</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/info/">
+    {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Donor Id:</label>
+        <div class="col-sm-4">
+        {{ form.reg_no }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-4">
+        {{ form.name }}
+        </div>
+    </div>
+ <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Father or Husband's Name:</label>
+        <div class="col-sm-4">
+        {{ form.father_or_husband_name }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Age:</label>
+        <div class="col-sm-4">
+        {{ form.age }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Male:</label>
+        <div class="col-sm-4">
+        {{ form.male }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Female:</label>
+        <div class="col-sm-4">
+        {{ form.female }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Occupation:</label>
+        <div class="col-sm-4">
+        {{ form.occupation }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Address:</label>
+        <div class="col-sm-4">
+        {{ form.address }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Mobile Number:</label>
+        <div class="col-sm-4">
+        {{ form.mobile_number }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+       <button type="submit" class = "btn btn-primary">Submit</button>
+        </div>
+    </div>
+    </div>
+</form>
+
+</body>
+</html>

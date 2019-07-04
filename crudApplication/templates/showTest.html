@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Physical Test Record</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Donor Id</th>
+        <th>Weight</th>
+        <th>Haemoglobin Level</th>
+        <th>Blood Pressure</th>
+        <th>Pulse</th>
+        <th>Temperature</th>
+        <th>Heart</th>
+        <th>Lungs</th>
+        <th>Others</th>
+    </tr>
+    </thead>
+    <tbody>
+   {% for items in charges %}
+    <tr>
+        <td>{{items.reg_no}}</td>
+        <td>{{items.weight}}</td>
+        <td>{{items.haemoglobin_level}}</td>
+        <td>{{items.bp}}</td>
+        <td>{{items.pulse}}</td>
+        <td>{{items.temp}}</td>
+        <td>{{items.heart }}</td>
+        <td>{{items.lungs}}</td>
+        <td>{{items.others}}</td>
+
+        <td>
+       <!--     <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil">Edit</span> </a>
+            <a href="/delete/{{ employee.id }}">Delete</a>-->
+        </td>
+    </tr>
+  {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

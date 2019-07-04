@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Physical Test</title>
+</head>
+<body>
+<form method="POST" class="post-form" action="/cost/">
+    {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Donor Id:</label>
+        <div class="col-sm-4">
+        {{ form.reg_no }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Weight:</label>
+        <div class="col-sm-4">
+        {{ form.weight }}
+        </div>
+    </div>
+ <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Haemoglobin Level:</label>
+        <div class="col-sm-4">
+        {{ form.haemoglobin_level }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Blood Pressure:</label>
+        <div class="col-sm-4">
+        {{ form.bp }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Pulse:</label>
+        <div class="col-sm-4">
+        {{ form.pulse }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Temperature:</label>
+        <div class="col-sm-4">
+        {{ form.temp }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Heart:</label>
+        <div class="col-sm-4">
+        {{ form.heart}}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lungs:</label>
+        <div class="col-sm-4">
+        {{ form.lungs }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Others:</label>
+        <div class="col-sm-4">
+        {{ form.others }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+       <button type="submit" class = "btn btn-primary">Submit</button>
+        </div>
+    </div>
+    </div>
+</form>
+</body>
+</html>
