@@ -90,31 +90,48 @@ def store(request):
                 pass
     else:
         form = StorageForm()
-    return render(request, "bag.html", {'form': form})
+    return render(request, "Inventory/bag.html", {'form': form})
 
 
 def show_storage(request):
     bags = Storage.objects.all()
-    return render(request, "showBag.html", {'bags': bags})
+    return render(request, "Inventory/showBag.html", {'bags': bags})
 
 
 def create(request):
     if request.method == "POST":
         form = DonorForm(request.POST)
-        if form.is_valid():
+        form1 = DonorInformationForm(request.POST)
+        tstform = PhysicalTestForm(request.POST)
+        donationform = BloodDonationHistoryForm(request.POST)
+        medicalform = MedicalHistoryForm(request.POST)
+        if form.is_valid() & form1.is_valid() & tstform.is_valid() & donationform.is_valid() & medicalform.is_valid():
             try:
                 form.save()
+                form1.save()
+                tstform.save()
+                donationform.save()
+                medicalform.save()
                 return redirect('/show_donor')
             except:
                 pass
     else:
         form = DonorForm()
-    return render(request, "donor.html", {'form': form})
+        form1 = DonorInformationForm()
+        tstform = PhysicalTestForm()
+        donationform = BloodDonationHistoryForm()
+        medicalform = MedicalHistoryForm()
+    return render(request, "Donor/donor.html", {'form': form, 'form1': form1, 'tstform': tstform, 'donationform': donationform,
+                                          'medicalform': medicalform})
 
 
 def show_donor(request):
     donate = Donor.objects.all()
-    return render(request, "showDonor.html", {'donate': donate})
+    data = DonorInformation.objects.all()
+    tstdata = PhysicalTest.objects.all()
+    donation = BloodDonationHistory.objects.all()
+    bags = MedicalHistory.objects.all()
+    return render(request, "Donor/showDonor.html", {'donate': donate, 'data': data, 'tstdata': tstdata, 'donation': donation, 'bags': bags})
 
 
 def info(request):
@@ -128,64 +145,64 @@ def info(request):
                 pass
     else:
         form = DonorInformationForm()
-    return render(request, "donorInfo.html", {'form': form})
+    return render(request, "Donor/donorInfo.html", {'form': form})
 
 
 def show_info(request):
     data = DonorInformation.objects.all()
-    return render(request, "showDonorInfo.html", {'data': data})
+    return render(request, "Donor/showDonorInfo.html", {'data': data})
 
 
 def test(request):
     if request.method == "POST":
-        form = PhysicalTestForm(request.POST)
-        if form.is_valid():
+        tstform = PhysicalTestForm(request.POST)
+        if tstform.is_valid():
             try:
-                form.save()
+                tstform.save()
                 return redirect('/show_test')
             except:
                 pass
     else:
-        form = PhysicalTestForm()
-    return render(request, "physicalTest.html", {'form': form})
+        tstform = PhysicalTestForm()
+    return render(request, "physicalTest.html", {'tstform': tstform})
 
 
 def show_test(request):
-    data = PhysicalTest.objects.all()
-    return render(request, "showTest.html", {'data': data})
+    tstdata = PhysicalTest.objects.all()
+    return render(request, "showTest.html", {'tstdata': tstdata})
 
 
 def blood_donation_method(request):
     if request.method == "POST":
-        form = BloodDonationHistoryForm(request.POST)
-        if form.is_valid():
+        donationform = BloodDonationHistoryForm(request.POST)
+        if donationform.is_valid():
             try:
-                form.save()
+                donationform.save()
                 return redirect('/blood_donation_info')
             except:
                 pass
     else:
-        form = BloodDonationHistoryForm()
-    return render(request, "blood_donation.html", {'form': form})
+        donationform = BloodDonationHistoryForm()
+    return render(request, "Donor/blood_donation.html", {'donationform': donationform})
 
 
 def blood_donation_info(request):
-    bags = BloodDonationHistory.objects.all()
-    return render(request, "show_blood_donation.html", {'bags': bags})
+    donation = BloodDonationHistory.objects.all()
+    return render(request, "Donor/show_blood_donation.html", {'donation': donation})
 
 
 def medical_history_method(request):
     if request.method == "POST":
-        form = MedicalHistoryForm(request.POST)
-        if form.is_valid():
+        medicalform = MedicalHistoryForm(request.POST)
+        if medicalform.is_valid():
             try:
-                form.save()
+                medicalform.save()
                 return redirect('/medical_history_show')
             except:
                 pass
     else:
-        form = MedicalHistoryForm()
-    return render(request, "medical_history.html", {'form': form})
+        medicalform = MedicalHistoryForm()
+    return render(request, "medical_history.html", {'medicalform': medicalform})
 
 
 def medical_history_show(request):

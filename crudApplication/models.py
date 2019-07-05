@@ -79,6 +79,7 @@ class Consent(models.Model):
     class Meta:
         db_table = "Consent"
 
+
 class DonorInformation(models.Model):
     reg_no = models.OneToOneField(Donor, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=50)

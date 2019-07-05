@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donor</title>
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/create/">
+    {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Id No:</label>
+        <div class="col-sm-4">
+        {{ form.reg_no }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Bag No:</label>
+        <div class="col-sm-4">
+        {{ form.bag_id }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Blood Group:</label>
+        <div class="col-sm-4">
+        {{ form.blood_group }}
+        </div>
+    </div>
+    </div>
+
+    <!-----------------------------------------------------Donor Personal Info---------------------------------------------------->
+
+       <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Personal Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Donor Id:</label>
+        <div class="col-sm-4">
+        {{ form1.reg_no }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-4">
+        {{ form1.name }}
+        </div>
+    </div>
+ <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Father or Husband's Name:</label>
+        <div class="col-sm-4">
+        {{ form1.father_or_husband_name }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Age:</label>
+        <div class="col-sm-4">
+        {{ form1.age }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Male:</label>
+        <div class="col-sm-4">
+        {{ form1.male }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Female:</label>
+        <div class="col-sm-4">
+        {{ form1.female }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Occupation:</label>
+        <div class="col-sm-4">
+        {{ form1.occupation }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Address:</label>
+        <div class="col-sm-4">
+        {{ form1.address }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Mobile Number:</label>
+        <div class="col-sm-4">
+        {{ form1.mobile_number }}
+        </div>
+    </div>
+ <!-- <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+       <button type="submit" class = "btn btn-primary">Submit</button>
+        </div>
+    </div>-->
+    </div>
+
+    <!----------------------------------------------Physical Test Info------------------------------------------------------------>
+
+      <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Physical Test Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Donor Id:</label>
+        <div class="col-sm-4">
+        {{ tstform.reg_no }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Weight:</label>
+        <div class="col-sm-4">
+        {{ tstform.weight }}
+        </div>
+    </div>
+ <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Haemoglobin Level:</label>
+        <div class="col-sm-4">
+        {{ tstform.haemoglobin_level }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Blood Pressure:</label>
+        <div class="col-sm-4">
+        {{ tstform.bp }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Pulse:</label>
+        <div class="col-sm-4">
+        {{ tstform.pulse }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Temperature:</label>
+        <div class="col-sm-4">
+        {{ tstform.temp }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Heart:</label>
+        <div class="col-sm-4">
+        {{ tstform.heart}}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lungs:</label>
+        <div class="col-sm-4">
+        {{ tstform.lungs }}
+        </div>
+    </div>
+  <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Others:</label>
+        <div class="col-sm-4">
+        {{ tstform.others }}
+        </div>
+    </div>
+    </div>
+
+ <br>
+ <br>
+
+    <!-------------------------------------------Blood Donation History---------------------------------------------------------->
+
+     <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Donor Id:</label>
+        <div class="col-sm-4">
+        {{ donationform.reg_no }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Blood Donation Before:</label>
+        <div class="col-sm-4">
+        {{ donationform.blood_donate_before_boolean }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Gap of Blood Donation:</label>
+        <div class="col-sm-4">
+        {{ donationform.gap_of_blood_donation }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Is Recipient Relative:</label>
+        <div class="col-sm-4">
+        {{ donationform.is_recipient_relative }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> patient_name :</label>
+        <div class="col-sm-4">
+        {{ donationform.patient_name }}
+        </div>
+    </div>
+    </div>
+<br>
+<br>
+    <!---------------------------------------------------Medical History--------------------------------------------------------->
+
+       <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+        <h3>Enter Medical History Details</h3>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Donor Id:</label>
+        <div class="col-sm-4">
+        {{ medicalform.reg_no }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Disease_before_how_longdays :</label>
+        <div class="col-sm-4">
+        {{ medicalform.disease_before_how_longdays }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lever_disease:</label>
+        <div class="col-sm-4">
+        {{ medicalform.lever_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Asphyxia:</label>
+        <div class="col-sm-4">
+        {{ medicalform.Asphyxia }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Cough:</label>
+        <div class="col-sm-4">
+        {{ medicalform.cough }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Heart_disease:</label>
+        <div class="col-sm-4">
+        {{ medicalform.heart_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Malaria:</label>
+        <div class="col-sm-4">
+        {{ medicalform.malaria }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Kalaajor:</label>
+        <div class="col-sm-4">
+        {{ medicalform.kalaazar }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Typhoid:</label>
+        <div class="col-sm-4">
+        {{ medicalform.typhoid }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Operation_in_three_month:</label>
+        <div class="col-sm-4">
+        {{ medicalform.operation_in_three_month }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Any_treatment_medicine_now:</label>
+        <div class="col-sm-4">
+        {{ medicalform.any_treatment_medicine_now }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Gastric:</label>
+        <div class="col-sm-4">
+        {{ medicalform.gestric }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Haematemeses :</label>
+        <div class="col-sm-4">
+        {{ medicalform.Haematemeses }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Blood_loo:</label>
+        <div class="col-sm-4">
+        {{ medicalform.blood_loo }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Rheumatic_fever:</label>
+        <div class="col-sm-4">
+        {{ medicalform.rheumatic_fever }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Diabetes:</label>
+        <div class="col-sm-4">
+        {{ medicalform.diabetes }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Epilepsy:</label>
+        <div class="col-sm-4">
+        {{ medicalform.epilepsy }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">kidney_disease:</label>
+        <div class="col-sm-4">
+        {{ medicalform.kidney_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Social_disease:</label>
+        <div class="col-sm-4">
+        {{ medicalform.social_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Skin_disease:</label>
+        <div class="col-sm-4">
+        {{ medicalform.skin_disease }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Is_blood_taken:</label>
+        <div class="col-sm-4">
+        {{ medicalform.is_blood_taken }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Is_vaccine_taken:</label>
+        <div class="col-sm-4">
+        {{ medicalform.is_vaccine_taken }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+       <button type="submit" class = "btn btn-primary">Submit</button>
+        </div>
+    </div>
+    </div>
+</form>
+
+</body>
+</html>
